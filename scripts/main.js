@@ -10,7 +10,7 @@
 			+ parseInt(getComputedStyle(passwordList[i]).borderTop))
 			+ "px";
 		showButton.style.width = "18px";
-		showButton.style.display = "inline";
+		
 		var mouseDown = function(){
 			showButton.classList.add("active");
 			passwordList[i].type="text";
@@ -18,13 +18,18 @@
 		var mouseUp = function(){
 			showButton.classList.remove("active");
 			passwordList[i].type="password";
-		}
+		} 
 		showButton.onmousedown = mouseDown;
 		showButton.onmouseup = mouseUp;
 		showButton.onmouseleave = mouseUp;
+		showButton.style.top = parseInt(getComputedStyle(passwordList[i]).marginTop) + 
+			parseInt(getComputedStyle(passwordList[i].parentNode).paddingTop) +  "px";
+		showButton.style.right = parseInt(getComputedStyle(passwordList[i]).borderRight) + "px";
 		
-		passwordList[i].style.setProperty("width", "calc(" + getComputedStyle(passwordList[i]).width + " - " + showButton.style.width + ")", "important");
-		passwordList[i].style.display = "inline";
+		passwordList[i].parentNode.style.position = "relative";
+		passwordList[i].style.setProperty("width", getComputedStyle(passwordList[i]).width, "important");
+		passwordList[i].style.paddingRight = showButton.style.width;
+		
 		
 		insertAfter(showButton,passwordList[i])
 		
