@@ -1,11 +1,10 @@
 .showPwdButton {
-	position: absolute;
+	float: right;
 	background-image: url('chrome-extension://__MSG_@@extension_id__/images/icon_0.png') !important;
 	background-size: contain;
     background-repeat: no-repeat;
 	background-position: 50% 50%;
     display: block;
-    right: 0px;
 }
 .showPwdButton.active {
 	background-image: url('chrome-extension://__MSG_@@extension_id__/images/icon_1.png') !important;
