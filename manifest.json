@@ -1,0 +1,30 @@
+﻿{
+  "name": "Show Password",
+  "short_name": "Show Password",
+  "version": "1.0.0",
+  "version_name":"1.0.0",
+  "description": "檢視密碼輸入框的內容。",
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [
+        "scripts/main.js"
+      ],
+      "css": [
+        "styles/main.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "images/*",
+    "templates/*"
+  ],
+  "icons": {
+    "128": "images/icon_0.png"
+  },
+  "manifest_version": 2
+}
